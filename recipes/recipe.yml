@@ -8,26 +8,10 @@ base-image: ghcr.io/ublue-os/bluefin-dx
 image-version: stable
 
 modules:
-  # - type: files
-  #   files:
-  #     - source: system
-  #       destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
-
   - type: rpm-ostree
     install:
       - alacritty
       - lastpass-cli
       - glances
-
-  # - type: default-flatpaks
-  #   notify: true
-  #   system:
-  #     install:
-  #       - org.mozilla.firefox
-  #       - org.gnome.Loupehttps://docs.projectbluefin.io/t2-mac/#
-  #     remove:
-  #       - org.gnome.eog
-  #   user: {} # Also add Flathub user repo, but no user packages
-
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
